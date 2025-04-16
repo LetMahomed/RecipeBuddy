@@ -1,0 +1,170 @@
+/* ===== Header ===== */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; 
+    padding: 1rem 2rem;
+    color: black; 
+    flex-wrap: wrap;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center; 
+    gap: 1rem;
+  }
+  
+  .header-left img {
+    width: 60px;
+    height: 60px; 
+    object-fit: cover;
+    border-radius: 12px; 
+  }
+  
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    color: black; 
+  }
+  
+  header p {
+    font-size: 1rem;
+    color: black; 
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .nav-links a {
+    color: black; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #66BB6A; 
+  }
+  
+  .auth-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .auth-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #66BB6A;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-container p {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .auth-container input[type="email"],
+  .auth-container input[type="password"],
+  .auth-container input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+  }
+  
+  .auth-container input:focus {
+    outline: none;
+    border-color: #66BB6A;
+    box-shadow: 0 0 4px rgba(102, 187, 106, 0.4);
+  }
+  
+  .auth-container button {
+    background-color: #FFA726;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .auth-container button:hover {
+    background-color: #FF6F61;
+    transform: scale(1.02);
+  }
+  
+  .switch-link {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #FFA726;
+    text-decoration: none;
+  }
+  
+  .switch-link:hover {
+    color: #66BB6A;
+  }
+  
+  
+  footer {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 2rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  footer .social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-links a:hover {
+    color: #66BB6A; 
+  }
+  
+  footer .social-links a i {
+    margin-right: 0.5rem;
+  }
+  
+  @media (max-width: 600px) {
+    footer {
+      padding: 1.5rem 1rem;
+    }
+    
+    footer .social-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
