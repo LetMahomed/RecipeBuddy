@@ -1,38 +1,28 @@
-// On the recipes page, get the user's pantry items and display recipes
-window.onload = function() {
-  // Retrieve pantry items and email from localStorage
-  const pantryItems = JSON.parse(localStorage.getItem('pantryItems')) || [];
-  const email = localStorage.getItem('email');
+// recipes.js
+
+// Function to get query parameters from the URL
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// Get the 'ingredients' from the URL
+const ingredients = getQueryParam('ingredients');
+
+// Display the ingredients and thank you message
+document.getElementById('thank-you-message').innerHTML = `Thank you for using Recipe Buddy! You entered: ${ingredients}`;
+
+if (ingredients) {
+  // Split the ingredients by comma and display them
+  const ingredientList = ingredients.split(',').map(item => item.trim());
+  const recipeListDiv = document.getElementById('recipe-list');
   
-  // Display thank you message with the user's email
-  const thankYouMessage = document.getElementById('thank-you-message');
-  thankYouMessage.textContent = `Thank you for using Recipe Buddy, ${email}!`;
-  
-  // In a real-world scenario, here we would query an API to fetch recipes based on the pantry items
-  // For now, we will mock a few sample recipes
-  
-  const sampleRecipes = [
-    { name: 'Chicken Salad', ingredients: ['chicken', 'lettuce', 'tomatoes', 'onions'] },
-    { name: 'Tomato Soup', ingredients: ['tomatoes', 'onions', 'garlic'] },
-    { name: 'Grilled Chicken', ingredients: ['chicken', 'garlic', 'olive oil'] },
-  ];
-  
-  // Filter recipes based on pantry items
-  const matchingRecipes = sampleRecipes.filter(recipe =>
-    recipe.ingredients.every(ingredient => pantryItems.includes(ingredient))
-  );
-  
-  // Display matching recipes
-  const recipeList = document.getElementById('recipe-list');
-  
-  if (matchingRecipes.length > 0) {
-    matchingRecipes.forEach(recipe => {
-      const recipeElement = document.createElement('div');
-      recipeElement.classList.add('recipe');
-      recipeElement.innerHTML = `<h3>${recipe.name}</h3><p>Ingredients: ${recipe.ingredients.join(', ')}</p>`;
-      recipeList.appendChild(recipeElement);
-    });
-  } else {
-    recipeList.innerHTML = '<p>No recipes found with the ingredients you have.</p>';
-  }
-};
+  // Here, you can add logic to fetch or display recipes based on these ingredients.
+  // For now, just display the list of ingredients.
+  recipeListDiv.innerHTML = `
+    <h3>Recipes you can make with:</h3>
+    <ul>
+      ${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}
+    </ul>
+  `;
+}
