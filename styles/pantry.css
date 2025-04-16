@@ -1,0 +1,53 @@
+/* ===== Pantry Page Styles ===== */
+body {
+    background-color: #F1FAF6;
+  }
+  
+  .pantry-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .pantry-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #6A9C92; /* Soft Green */
+  }
+  
+  .pantry-container p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .pantry-container textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+  }
+  
+  .pantry-container button {
+    background-color: #6A9C92;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .pantry-container button:hover {
+    background-color: #F0D27B; /* Golden Yellow */
+    transform: scale(1.05);
+  }
+  

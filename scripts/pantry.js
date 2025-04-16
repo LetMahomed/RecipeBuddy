@@ -11,6 +11,6 @@ document.getElementById('pantry-form').addEventListener('submit', function(event
     const ingredients = pantryInput.split(',').map(item => item.trim()).join(',');
 
     // Redirect to the recipes page with the ingredients in the URL
-    window.location.href = `https://letmahomed.github.io/RecipeBuddy/recipes.html?ingredients=${encodeURIComponent(ingredients)}`;
+    window.location.href = `https://letmahomed.github.io/RecipeBuddy/recipe.html?ingredients=${encodeURIComponent(ingredients)}`;
   }
 });
