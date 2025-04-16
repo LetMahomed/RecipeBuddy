@@ -1,19 +1,19 @@
-// scripts/pantry.js
-const form = document.getElementById("pantry-form");
-const list = document.getElementById("pantry-list");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-  const item = document.getElementById("item").value;
-  const pantry = JSON.parse(localStorage.getItem("pantry")) || [];
-  pantry.push(item);
-  localStorage.setItem("pantry", JSON.stringify(pantry));
-  renderPantry();
+// On the pantry page, when the user submits the pantry input, redirect to recipes page
+document.getElementById('pantry-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  // Get the pantry input value (ingredients the user has)
+  const pantryInput = document.getElementById('pantry-input').value.trim();
+  
+  if (pantryInput) {
+    // Store the pantry items and email in localStorage (from previous login)
+    const pantryItems = pantryInput.split(',').map(item => item.trim());
+    const email = localStorage.getItem('email');  // Assuming email was saved in localStorage during login
+    
+    localStorage.setItem('pantryItems', JSON.stringify(pantryItems));
+    localStorage.setItem('email', email);
+    
+    // Redirect to the recipes page
+    window.location.href = 'recipes.html';
+  }
 });
-
-function renderPantry() {
-  const pantry = JSON.parse(localStorage.getItem("pantry")) || [];
-  list.innerHTML = pantry.map(i => `<li>${i}</li>`).join("");
-}
-
-document.addEventListener("DOMContentLoaded", renderPantry);

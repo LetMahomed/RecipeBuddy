@@ -39,7 +39,7 @@ function handleSubmit(event) {
     }
   
     // If all is valid, redirect to the "Pantry" page
-    window.location.href = "pantry.html"; // Replace with your actual "Pantry" page URL
+    window.location.href = "https://letmahomed.github.io/RecipeBuddy/pantry.html"; // Replace with your actual "Pantry" page URL
   }
   
   // Toggle between Login and Sign-Up

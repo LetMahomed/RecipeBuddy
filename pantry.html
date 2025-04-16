@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css" />
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Recipe Buddy: Manage your pantry, plan meals, and discover recipes." />
+  <meta name="author" content="Leticia Mahomed" />
+  <meta property="og:title" content="Recipe Buddy" />
+  <meta property="og:image" content="images/" />
+  <meta property="og:description" content="Your go-to app for meal planning, pantry management, and shopping lists" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-    <!-- Header -->
-<header class="app-header">
+
+  <header>
     <div class="header-left">
-      <img src="images/logo.svg" alt="Recipe Buddy Logo" class="logo" />
+      <img src="images/logo2.png" alt="Recipe Buddy Logo" width="70">
       <div class="site-info">
         <h1>Recipe Buddy</h1>
-        <p>Your personal meal planner & pantry manager</p>
+        <p>Your go-to app for meal planning, pantry management, and shopping lists</p>
       </div>
     </div>
     <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
         <li><a href="pantry.html">Pantry</a></li>
-        <li><a href="recipe-search.html">Recipes</a></li>
-        <li><a href="meal-planner.html">Meal Planner</a></li>
-        <li><a href="shopping-list.html">Shopping List</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="#">Meal Planner</a></li>
+        <li><a href="#">Shopping List</a></li>
       </ul>
     </nav>
   </header>
-  
+
+  <div class="pantry-container">
+    <h2>What's in Your Pantry?</h2>
+    <p>Enter the ingredients you have, separated by commas:</p>
+    
+    <form id="pantry-form">
+      <textarea id="pantry-input" placeholder="e.g., tomatoes, chicken, onions" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Recipe Buddy. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" target="_blank">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="#" target="_blank">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      <a href="#" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </footer>
+
+  <script src="scripts/pantry.js"></script>
 </body>
 </html>
