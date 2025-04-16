@@ -34,12 +34,41 @@
   <div class="recipes-container">
     <h2>Recipes You Can Make</h2>
     <div id="recipe-list">
-      <!-- Recipes will be dynamically loaded here based on pantry items -->
     </div>
     
     <p id="thank-you-message"></p>
   </div>
+  <script src="api.js"></script>
 
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ingredients = urlParams.get('ingredients'); 
+    console.log('Ingredients from URL:', ingredients); 
+
+    const email = localStorage.getItem('userEmail');
+    if (email) {
+      document.getElementById('thank-you-message').innerText = `Thank you for using Recipe Buddy, ${email}!`;
+    }
+
+    if (ingredients) {
+      const ingredientsArray = ingredients.split(','); 
+      console.log('Ingredients Array:', ingredientsArray); 
+      getRecipesByIngredients(ingredientsArray).then(recipes => {
+        console.log('Recipes fetched:', recipes); 
+        if (recipes.length > 0) {
+          displayRecipes(recipes); 
+        } else {
+          document.getElementById('recipe-list').innerHTML = 'No recipes found with the given ingredients.';
+        }
+      }).catch(error => {
+        console.error('Error fetching recipes:', error); 
+        document.getElementById('recipe-list').innerHTML = 'An error occurred while fetching recipes.';
+      });
+    } else {
+      document.getElementById('recipe-list').innerHTML = 'No ingredients were provided.';
+    }
+
+  </script>
   <footer>
     <p>&copy; 2025 Recipe Buddy. All rights reserved.</p>
     <div class="social-links">
@@ -58,3 +87,7 @@
   <script src="scripts/recipes.js"></script>
 </body>
 </html>
+
+  
+
+    

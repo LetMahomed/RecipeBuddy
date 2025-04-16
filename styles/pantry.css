@@ -1,14 +1,15 @@
-/* ===== Pantry Page Styles ===== */
 body {
-    background-color: #F1FAF6;
+    background-color: #F9F9F9; 
+    font-family: 'Open Sans', sans-serif;
+    color: #333333; 
   }
   
   .pantry-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 4rem auto;
     padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #FFFFFF; 
+    border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
@@ -16,26 +17,29 @@ body {
   .pantry-container h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    color: #6A9C92; /* Soft Green */
+    color: #4F7C7A; 
+    margin-bottom: 1rem;
   }
   
   .pantry-container p {
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.1rem;
+    color: #555; 
   }
   
   .pantry-container textarea {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #D1D1D1; 
     border-radius: 8px;
     resize: vertical;
+    background-color: #F1F1F1; 
+    color: #333333; 
   }
   
   .pantry-container button {
-    background-color: #6A9C92;
+    background-color: #4F7C7A; 
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -47,7 +51,27 @@ body {
   }
   
   .pantry-container button:hover {
-    background-color: #F0D27B; /* Golden Yellow */
+    background-color: #F7C1A7; 
     transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .pantry-container {
+      max-width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .pantry-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .pantry-container p {
+      font-size: 1rem;
+    }
+  
+    .pantry-container button {
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
   }
   
